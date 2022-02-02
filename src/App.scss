@@ -3,10 +3,12 @@
   padding: 0;
   border: 0;
   outline: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+
   background: transparent;
+
   font-family: inherit;
+
   text-decoration: none;
 }
 
@@ -40,25 +42,23 @@ button,
 input,
 textarea,
 select {
-  -moz-appearance: none !important;
-       appearance: none !important;
+  appearance: none !important;
   -webkit-appearance: none !important;
   border-radius: 0;
 }
 
 body {
-  background-color: #c5e4e7;
+  background-color: hsl(185, 41%, 84%);
 }
 
 .calculator-card {
   padding: 50px;
   background-color: #fff;
-}
 
-.calculator-card #bill-amount {
-  padding: 25px;
-  height: 50px;
-  width: calc(100vw - 100px);
-  background-color: #f4fafa;
+  #bill-amount {
+    padding: 25px;
+    height: 50px;
+    width: calc(100vw - 100px);
+    background-color: hsl(189, 41%, 97%);
+  }
 }
-/*# sourceMappingURL=App.css.map */
