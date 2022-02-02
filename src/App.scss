@@ -48,17 +48,137 @@ select {
 }
 
 body {
+  font-family: "Space Mono", monospace;
   background-color: hsl(185, 41%, 84%);
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  flex-wrap: wrap;
+
+  img {
+    height: 60px;
+  }
+}
+
 .calculator-card {
+  border-radius: 25px 25px 0 0;
   padding: 50px;
   background-color: #fff;
 
-  #bill-amount {
+  @media screen and (min-width: 376px) {
+    .calculator-card {
+      border-radius: 25px;
+      display: flex;
+      width: 60vw;
+    }
+  }
+
+  input[type="text"]::placeholder {
+    color: hsl(185, 41%, 84%);
+  }
+
+  #bill-amount,
+  #people-number {
     padding: 25px;
+    margin-bottom: 25px;
     height: 50px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
     width: calc(100vw - 100px);
+    color: hsl(183, 100%, 15%);
     background-color: hsl(189, 41%, 97%);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin: 20px 0;
+
+    li {
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+      padding: 0 10px;
+      height: 60px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      background-color: hsl(183, 100%, 15%);
+
+      input[type="radio"] {
+        position: absolute;
+        border-radius: 5px;
+        width: calc((100vw - 110px) / 2);
+        height: 60px;
+        cursor: pointer;
+      }
+
+      label {
+        padding-top: 10px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      input[type="radio"]:checked {
+        color: hsl(183, 100%, 15%);
+        background-color: hsl(172, 67%, 45%);
+        z-index: 0;
+      }
+
+      #custom-percentage-text {
+        max-width: 90px;
+        font-size: 24px;
+        z-index: 2;
+      }
+    }
+  }
+
+  .right-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: hsl(183, 100%, 15%);
+
+    .tip-amount,
+    .total-amount {
+      display: flex;
+      justify-content: space-between;
+      width: calc(100vw - 140px);
+      margin: 20px 0 50px;
+    }
+
+    .reset-btn {
+      border-radius: 10px;
+      height: 50px;
+      width: calc(100vw - 140px);
+      font-weight: 700;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: hsl(183, 100%, 15%);
+      background-color: hsl(172, 67%, 45%);
+    }
+
+    h3 {
+      margin: unset;
+      color: #fff;
+    }
+
+    h5 {
+      color: hsl(186, 14%, 43%);
+    }
+
+    h1 {
+      color: hsl(172, 67%, 45%);
+    }
+  }
+
+  h3 {
+    margin: 15px 0 5px;
+    color: hsl(186, 14%, 43%);
   }
 }
