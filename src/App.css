@@ -40,9 +40,9 @@ button,
 input,
 textarea,
 select {
-  -moz-appearance: none !important;
-       appearance: none !important;
-  -webkit-appearance: none !important;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
   border-radius: 0;
 }
 
@@ -73,30 +73,47 @@ header img {
   background-color: #fff;
 }
 
-@media screen and (min-width: 376px) {
-  .calculator-card .calculator-card {
-    border-radius: 25px;
+@media screen and (min-width: 1040px) {
+  .calculator-card {
+    border-radius: 25px 25px 25px 25px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: 20vw;
+    gap: 25px;
     width: 60vw;
+  }
+  .calculator-card .left-card {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    width: 30vw;
+  }
+  .calculator-card .reset-btn,
+  .calculator-card .total-amount,
+  .calculator-card .tip-amount {
+    width: calc(30vw - 50px);
   }
 }
 
 .calculator-card input[type="text"]::-webkit-input-placeholder {
-  color: #c5e4e7;
+  color: #7f9c9f;
 }
 
 .calculator-card input[type="text"]:-ms-input-placeholder {
-  color: #c5e4e7;
+  color: #7f9c9f;
 }
 
 .calculator-card input[type="text"]::-ms-input-placeholder {
-  color: #c5e4e7;
+  color: #7f9c9f;
 }
 
 .calculator-card input[type="text"]::placeholder {
-  color: #c5e4e7;
+  color: #7f9c9f;
 }
 
 .calculator-card #bill-amount,
@@ -113,6 +130,18 @@ header img {
   background-color: #f4fafa;
 }
 
+@media screen and (min-width: 1040px) {
+  .calculator-card #bill-amount,
+  .calculator-card #people-number {
+    width: calc(30vw - 100px);
+  }
+}
+
+.calculator-card #bill-amount:focus,
+.calculator-card #people-number:focus {
+  outline: 2px solid #26c0ab;
+}
+
 .calculator-card ul {
   display: -ms-grid;
   display: grid;
@@ -120,6 +149,13 @@ header img {
       grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   margin: 20px 0;
+}
+
+@media screen and (min-width: 1040px) {
+  .calculator-card ul {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .calculator-card ul li {
@@ -135,7 +171,6 @@ header img {
   font-size: 24px;
   font-weight: 700;
   color: #fff;
-  background-color: #00494d;
 }
 
 .calculator-card ul li input[type="radio"] {
@@ -146,32 +181,59 @@ header img {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1040px) {
+  .calculator-card ul li input[type="radio"] {
+    width: calc((30vw - 110px) / 3);
+  }
+}
+
 .calculator-card ul li label {
   padding-top: 10px;
   cursor: pointer;
   z-index: 1;
 }
 
-.calculator-card ul li input[type="radio"]:checked {
-  color: #00494d;
-  background-color: #26c0ab;
-  z-index: 0;
-}
-
 .calculator-card ul li #custom-percentage-text {
   max-width: 90px;
   font-size: 24px;
-  z-index: 2;
+  font-weight: 700;
+  text-align: right;
+  color: #00494d;
 }
 
-.calculator-card .right-card {
+@media screen and (min-width: 1040px) {
+  .calculator-card ul li #custom-percentage-text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .calculator-card ul li #custom-percentage-text:focus {
+    outline: 2px solid aquamarine;
+  }
+}
+
+.calculator-card li:last-child {
+  background-color: #f4fafa;
+}
+
+.right-card {
   border-radius: 20px;
   padding: 20px;
   background-color: #00494d;
 }
 
-.calculator-card .right-card .tip-amount,
-.calculator-card .right-card .total-amount {
+@media screen and (min-width: 1040px) {
+  .right-card {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    width: 30vw;
+  }
+}
+
+.right-card .tip-amount,
+.right-card .total-amount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,7 +244,14 @@ header img {
   margin: 20px 0 50px;
 }
 
-.calculator-card .right-card .reset-btn {
+@media screen and (min-width: 1040px) {
+  .right-card .tip-amount,
+  .right-card .total-amount {
+    width: calc(30vw - 50px);
+  }
+}
+
+.right-card .reset-btn {
   border-radius: 10px;
   height: 50px;
   width: calc(100vw - 140px);
@@ -193,20 +262,33 @@ header img {
   background-color: #26c0ab;
 }
 
-.calculator-card .right-card h3 {
+@media screen and (min-width: 1040px) {
+  .right-card .reset-btn {
+    margin-top: 200px;
+    width: calc(30vw - 50px);
+  }
+}
+
+.right-card .reset-btn:disabled {
+  background-color: #006166;
+}
+
+.right-card h3 {
   margin: unset;
   color: #fff;
 }
 
-.calculator-card .right-card h5 {
+.right-card h5 {
+  font-size: 16px;
   color: #5e7a7d;
 }
 
-.calculator-card .right-card h1 {
+.right-card h1 {
+  font-size: 30px;
   color: #26c0ab;
 }
 
-.calculator-card h3 {
+h3 {
   margin: 15px 0 5px;
   color: #5e7a7d;
 }
