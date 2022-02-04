@@ -139,7 +139,8 @@ header img {
 
 .calculator-card #bill-amount:focus,
 .calculator-card #people-number:focus {
-  outline: 2px solid #26c0ab;
+  -webkit-box-shadow: 0 0 0 2px #26c0ab;
+          box-shadow: 0 0 0 2px #26c0ab;
 }
 
 .calculator-card ul {
@@ -201,6 +202,7 @@ header img {
 }
 
 .calculator-card ul li #custom-percentage-text {
+  border-radius: 5px;
   width: calc((100vw - 110px) / 2);
   padding: 0 10px;
   font-size: 24px;
@@ -221,10 +223,8 @@ header img {
 }
 
 .calculator-card ul li #custom-percentage-text:focus {
-  border-radius: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: 2px solid #26c0ab;
+  -webkit-box-shadow: 0 0 0 2px #26c0ab;
+          box-shadow: 0 0 0 2px #26c0ab;
 }
 
 .calculator-card li:last-child {

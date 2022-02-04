@@ -112,7 +112,7 @@ header {
 
   #bill-amount:focus,
   #people-number:focus {
-    outline: 2px solid hsl(172, 67%, 45%);
+    box-shadow: 0 0 0 2px hsl(172, 67%, 45%);
   }
 
   ul {
@@ -159,6 +159,7 @@ header {
       }
 
       #custom-percentage-text {
+        border-radius: 5px;
         width: calc((100vw - 110px) / 2);
         padding: 0 10px;
         font-size: 24px;
@@ -177,9 +178,7 @@ header {
       }
 
       #custom-percentage-text:focus {
-        border-radius: 5px;
-        box-sizing: border-box;
-        outline: 2px solid hsl(172, 67%, 45%);
+        box-shadow: 0 0 0 2px hsl(172, 67%, 45%);
       }
     }
   }
