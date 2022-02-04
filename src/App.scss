@@ -106,7 +106,7 @@ header {
     background-color: hsl(189, 41%, 97%);
 
     @media screen and (min-width: 1040px) {
-      width: calc(30vw - 100px);
+      width: calc(30vw - 90px);
     }
   }
 
@@ -122,6 +122,7 @@ header {
     margin: 20px 0;
 
     @media screen and (min-width: 1040px) {
+      margin: 20px 0 40px;
       grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -129,11 +130,15 @@ header {
       display: flex;
       justify-content: center;
       border-radius: 5px;
-      padding: 0 10px;
       height: 60px;
+      width: calc((100vw - 110px) / 2);
       font-size: 24px;
       font-weight: 700;
       color: #fff;
+
+      @media screen and (min-width: 1040px) {
+        width: calc((30vw - 110px) / 3);
+      }
 
       input[type="radio"] {
         position: absolute;
@@ -154,21 +159,27 @@ header {
       }
 
       #custom-percentage-text {
-        max-width: 90px;
+        width: calc((100vw - 110px) / 2);
+        padding: 0 10px;
         font-size: 24px;
         font-weight: 700;
         text-align: right;
         color: hsl(183, 100%, 15%);
 
         @media screen and (min-width: 1040px) {
+          width: calc((30vw - 110px) / 3);
           font-size: 18px;
         }
       }
 
+      #custom-percentage-text:placeholder-shown {
+        text-align: center;
+      }
+
       #custom-percentage-text:focus {
-        @media screen and (min-width: 1040px) {
-          outline: 2px solid aquamarine;
-        }
+        border-radius: 5px;
+        box-sizing: border-box;
+        outline: 2px solid hsl(172, 67%, 45%);
       }
     }
   }
@@ -211,7 +222,7 @@ header {
     background-color: hsl(172, 67%, 45%);
 
     @media screen and (min-width: 1040px) {
-      margin-top: 200px;
+      margin-top: 145px;
       width: calc(30vw - 50px);
     }
   }
@@ -231,7 +242,7 @@ header {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 35px;
     color: hsl(172, 67%, 45%);
   }
 }

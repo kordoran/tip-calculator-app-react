@@ -133,7 +133,7 @@ header img {
 @media screen and (min-width: 1040px) {
   .calculator-card #bill-amount,
   .calculator-card #people-number {
-    width: calc(30vw - 100px);
+    width: calc(30vw - 90px);
   }
 }
 
@@ -153,6 +153,7 @@ header img {
 
 @media screen and (min-width: 1040px) {
   .calculator-card ul {
+    margin: 20px 0 40px;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
@@ -166,11 +167,17 @@ header img {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 5px;
-  padding: 0 10px;
   height: 60px;
+  width: calc((100vw - 110px) / 2);
   font-size: 24px;
   font-weight: 700;
   color: #fff;
+}
+
+@media screen and (min-width: 1040px) {
+  .calculator-card ul li {
+    width: calc((30vw - 110px) / 3);
+  }
 }
 
 .calculator-card ul li input[type="radio"] {
@@ -194,7 +201,8 @@ header img {
 }
 
 .calculator-card ul li #custom-percentage-text {
-  max-width: 90px;
+  width: calc((100vw - 110px) / 2);
+  padding: 0 10px;
   font-size: 24px;
   font-weight: 700;
   text-align: right;
@@ -203,14 +211,20 @@ header img {
 
 @media screen and (min-width: 1040px) {
   .calculator-card ul li #custom-percentage-text {
+    width: calc((30vw - 110px) / 3);
     font-size: 18px;
   }
 }
 
-@media screen and (min-width: 1040px) {
-  .calculator-card ul li #custom-percentage-text:focus {
-    outline: 2px solid aquamarine;
-  }
+.calculator-card ul li #custom-percentage-text:placeholder-shown {
+  text-align: center;
+}
+
+.calculator-card ul li #custom-percentage-text:focus {
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: 2px solid #26c0ab;
 }
 
 .calculator-card li:last-child {
@@ -264,7 +278,7 @@ header img {
 
 @media screen and (min-width: 1040px) {
   .right-card .reset-btn {
-    margin-top: 200px;
+    margin-top: 145px;
     width: calc(30vw - 50px);
   }
 }
@@ -284,7 +298,7 @@ header img {
 }
 
 .right-card h1 {
-  font-size: 30px;
+  font-size: 35px;
   color: #26c0ab;
 }
 

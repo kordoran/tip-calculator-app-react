@@ -11,11 +11,16 @@ function App() {
   const totalPerPerson = billSum * tipPercentage / peopleCount;
   const tipPerPerson = (billSum * tipPercentage - billSum) / peopleCount;
 
-  function reset () {
+  const reset = () => {
     setTipPercentage(0);
     setBillSum(0);
     setPeopleCount(0);
     document.querySelector('input[name="percentage"]:checked').checked = false;
+    document.getElementById('custom-percentage-text').value = "";
+  }
+  
+  const percentageSetter = (p) => {
+    setTipPercentage(p);
     document.getElementById('custom-percentage-text').value = "";
   }
 
@@ -27,35 +32,35 @@ function App() {
       <div className='calculator-card'>
         <div className='left-card'>
           <h3>Bill</h3>
-          <input id="bill-amount" onChange={e => setBillSum(e.target.value)} value={billSum > 0 ? billSum : ""} placeholder={billSum}/>
+          <input id="bill-amount" onChange={e => setBillSum(e.target.value)} value={billSum > 0 ? billSum : ""} placeholder={billSum} autoComplete='off'/>
           <h3>Select Tip %</h3>
           <ul>
             <li>
-              <input type="radio" name="percentage" id="5%" onClick={() => setTipPercentage(1.05)} style={{backgroundColor: tipPercentage === 1.05 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}} />
+              <input type="radio" name="percentage" id="5%" onClick={() => percentageSetter(1.05)} style={{backgroundColor: tipPercentage === 1.05 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}} />
               <label htmlFor="5%">5%</label>
             </li>
             <li>
-              <input type="radio" name="percentage" id="10%" onClick={() => setTipPercentage(1.1)} style={{backgroundColor: tipPercentage === 1.1 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
+              <input type="radio" name="percentage" id="10%" onClick={() => percentageSetter(1.1)} style={{backgroundColor: tipPercentage === 1.1 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
               <label htmlFor="10%">10%</label>
             </li>
             <li>
-              <input type="radio" name="percentage" id="15%" onClick={() => setTipPercentage(1.15)} style={{backgroundColor: tipPercentage === 1.15 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
+              <input type="radio" name="percentage" id="15%" onClick={() => percentageSetter(1.15)} style={{backgroundColor: tipPercentage === 1.15 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
               <label htmlFor="15%">15%</label>
             </li>
             <li>
-              <input type="radio" name="percentage" id="25%" onClick={() => setTipPercentage(1.25)} style={{backgroundColor: tipPercentage === 1.25 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
+              <input type="radio" name="percentage" id="25%" onClick={() => percentageSetter(1.25)} style={{backgroundColor: tipPercentage === 1.25 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
               <label htmlFor="25%">25%</label>
             </li>
             <li>
-              <input type="radio" name="percentage" id="50%" onClick={() => setTipPercentage(1.5)} style={{backgroundColor: tipPercentage === 1.5 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
+              <input type="radio" name="percentage" id="50%" onClick={() => percentageSetter(1.5)} style={{backgroundColor: tipPercentage === 1.5 ? "hsl(172, 67%, 45%)" : "hsl(183, 100%, 15%)"}}/>
               <label htmlFor="50%">50%</label>
             </li>
             <li>
-              <input type='text' placeholder='Custom' id='custom-percentage-text' onChange={(e) => setTipPercentage(1 + (e.target.value / 100))}/>
+              <input type='text' placeholder='Custom' id='custom-percentage-text' onChange={(e) => setTipPercentage(1 + (e.target.value / 100))} autoComplete='off'/>
             </li>
           </ul>
           <h3>Number of People</h3>
-          <input type="text" id='people-number' onChange={e => setPeopleCount(e.target.value)} value={peopleCount > 0 ? peopleCount : ""} placeholder={peopleCount}/>
+          <input type="text" id='people-number' onChange={e => setPeopleCount(e.target.value)} value={peopleCount > 0 ? peopleCount : ""} placeholder={peopleCount} autoComplete='off'/>
         </div>
         <div className='right-card'>
           <div className='tip-amount'>
